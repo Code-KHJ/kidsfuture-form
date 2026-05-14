@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
+    format("woff2-variations");
+}
+
+@theme {
+  --color-brand-purple: #a395c0;
+  --color-brand-purple-soft: #c9beda;
+  --color-brand-lime: #a6ce39;
+  --color-brand-lime-soft: #d4e592;
+  --color-brand-coral: #f08673;
+  --color-brand-coral-soft: #f7b9ac;
+  --color-brand-ink: #1a1a1f;
+  --color-brand-mute: #6c6a78;
+  --color-brand-paper: #faf8f4;
+  --color-brand-line: #eae6dd;
+
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+
+  --radius-card: 1.75rem;
+  --radius-cta: 999px;
+
+  --shadow-soft: 0 24px 60px -28px rgba(163, 149, 192, 0.45);
+  --shadow-coral: 0 24px 60px -28px rgba(240, 134, 115, 0.45);
+
+  --background-image-brand-gradient: linear-gradient(
+    135deg,
+    #a395c0 0%,
+    #a6ce39 50%,
+    #f08673 100%
+  );
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--color-brand-paper);
+  color: var(--color-brand-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss02", "cv01";
+  letter-spacing: -0.01em;
+}
+
+.brand-gradient {
+  background-image: var(--background-image-brand-gradient);
+}
+
+.brand-soft-bg {
+  background:
+    radial-gradient(at 18% 12%, rgba(163, 149, 192, 0.35), transparent 55%),
+    radial-gradient(at 82% 18%, rgba(240, 134, 115, 0.32), transparent 55%),
+    radial-gradient(at 50% 92%, rgba(166, 206, 57, 0.32), transparent 60%),
+    var(--color-brand-paper);
+}
+
+.brand-text-gradient {
+  background-image: var(--background-image-brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* subtle dotted noise to add texture, used over solid backgrounds */
+.brand-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(rgba(26, 26, 31, 0.04) 1px, transparent 1px);
+  background-size: 4px 4px;
 }
