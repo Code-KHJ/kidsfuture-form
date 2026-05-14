@@ -11,6 +11,8 @@ export function Header() {
             alt="아이들과미래재단"
             width={156}
             height={28}
+            sizes="(min-width: 640px) 180px, 156px"
+            style={{ width: "auto", height: "auto" }}
             className="h-6 w-auto sm:h-7"
             priority
           />
@@ -34,6 +36,8 @@ function InstructorLogo() {
       alt="SWITworks"
       width={4578}
       height={1756}
+      sizes="(min-width: 640px) 70px, 56px"
+      style={{ width: "auto", height: "auto" }}
       priority
       className="h-5 w-auto sm:h-6"
     />

@@ -5,11 +5,6 @@ export const metadata: Metadata = {
   title: "아이들과미래재단 임직원 AI교육 신청",
   description:
     "아이들과미래재단 임직원을 위한 2회기 AI 업무 생산성 교육 — 일정을 선택하고 신청해 주세요.",
-  icons: {
-    icon: [{ url: "/favicon.png", type: "image/png" }],
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
   openGraph: {
     title: "아이들과미래재단 임직원 AI교육 신청",
     description: "생성형 AI · 바이브코딩으로 업무를 한 단계 끌어올리는 사내 워크숍.",

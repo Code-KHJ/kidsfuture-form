@@ -137,7 +137,7 @@ export async function appendRow(input: AppendRow): Promise<void> {
     requestBody: {
       values: [
         [
-          new Date().toISOString(),
+          new Date().toLocaleString("sv-SE", { timeZone: "Asia/Seoul" }),
           input.name,
           input.team,
           input.session1,
